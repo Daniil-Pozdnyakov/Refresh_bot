@@ -1,10 +1,9 @@
-import os
-from lib2to3.fixes.fix_unicode import FixUnicode
+import config
 
 from slack import WebClient
 from slack.errors import SlackApiError
 
-client = WebClient(token=os.environ['SLACK_BOT_TOKEN'])
+client = WebClient(token=config.SLACK_API_KEY)
 try:
     response = client.users_list()
     print(response)
